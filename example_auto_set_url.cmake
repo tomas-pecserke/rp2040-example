@@ -1,0 +1,5 @@
+set(REPO_URL_BASE "https://github.com/tomas-pecserke/rp2040-example")
+macro(example_auto_set_url TARGET)
+    file(RELATIVE_PATH URL_REL_PATH "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_LIST_DIR}")
+    pico_set_program_url(${TARGET} "${REPO_URL_BASE}/tree/HEAD/${URL_REL_PATH}")
+endmacro()
